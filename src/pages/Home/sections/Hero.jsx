@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative overflow-hidden bg-gradient-to-b from-cream via-ivory to-ivory pt-32 pb-16 sm:pt-36 sm:pb-24 lg:pt-40 lg:pb-28"
+      className="relative overflow-hidden bg-gradient-to-b from-cream via-ivory to-ivory pt-32 pb-16 sm:pt-36 sm:pb-24 lg:pt-25 lg:pb-5"
     >
       {/* Ambient Background */}
       <div

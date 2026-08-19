@@ -12,14 +12,11 @@ const links = [
   { to: "/contact", label: "Contact" },
 ];
 
-// Business phone number
 const businessPhone = "+92 0309 1190761";
 const businessPhoneRaw = "923091190761";
 
-// WhatsApp number
 const whatsappNumber = "923091190761";
 
-// WhatsApp pre-filled message
 const whatsappMessage =
   "Hello Zahid Decor & Flowers, I would like to know more about your flower and decoration services.";
 
@@ -32,7 +29,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+    };
 
     onScroll();
     window.addEventListener("scroll", onScroll);
@@ -56,20 +55,19 @@ export default function Navbar() {
         duration: 0.7,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 ${
         scrolled
-          ? "bg-ivory/90 backdrop-blur-md shadow-card py-3"
-          : "bg-transparent py-5"
+          ? "bg-ivory/95 py-2.5 shadow-card backdrop-blur-md"
+          : "bg-transparent py-3 sm:py-4 lg:py-5"
       }`}
     >
-      <nav className="container-x flex items-center justify-between">
-        {/* ================= LOGO ================= */}
+      <nav className="container-x flex min-h-[56px] w-full items-center justify-between gap-3 sm:min-h-[60px] lg:min-h-[64px]">
         {/* ================= LOGO ================= */}
         <NavLink
           to="/"
           onClick={() => setOpen(false)}
           aria-label="Zahid Decor & Flowers Home"
-          className="flex items-center shrink-0 group"
+          className="flex min-w-0 shrink-0 items-center"
         >
           <motion.img
             src="/logo.png"
@@ -82,25 +80,33 @@ export default function Navbar() {
               damping: 20,
             }}
             className="
-      h-14
-      w-auto
-      max-w-[230px]
-      object-contain
-      object-center
-      sm:h-15
-      sm:max-w-[250px]
-      md:h-16
-      md:max-w-[270px]
-      lg:h-[68px]
-      lg:max-w-[290px]
-      transition-all
-      duration-300
-    "
+              block
+              h-9
+              w-auto
+              max-w-[145px]
+              object-contain
+              object-left
+
+              xs:h-10
+              xs:max-w-[155px]
+
+              sm:h-11
+              sm:max-w-[175px]
+
+              md:h-12
+              md:max-w-[200px]
+
+              lg:h-14
+              lg:max-w-[225px]
+
+              xl:h-16
+              xl:max-w-[250px]
+            "
           />
         </NavLink>
 
         {/* ================= DESKTOP NAVIGATION ================= */}
-        <ul className="hidden lg:flex items-center gap-9">
+        <ul className="hidden lg:flex items-center gap-6 xl:gap-9">
           {links.map((link, index) => (
             <motion.li
               key={link.to}
@@ -115,7 +121,7 @@ export default function Navbar() {
                 to={link.to}
                 end={link.to === "/"}
                 className={({ isActive }) =>
-                  `relative py-1 text-sm tracking-wide transition-colors duration-300
+                  `relative whitespace-nowrap py-1 text-sm tracking-wide transition-colors duration-300
                   after:absolute after:-bottom-1 after:left-0 after:h-[1.5px]
                   after:bg-gold after:transition-all after:duration-300 ${
                     isActive
@@ -131,18 +137,16 @@ export default function Navbar() {
         </ul>
 
         {/* ================= DESKTOP RIGHT SIDE ================= */}
-        <div className="hidden lg:flex items-center gap-4">
-          {/* Phone Number */}
+        <div className="hidden lg:flex items-center gap-3 xl:gap-4">
           <motion.a
             href={`tel:+${businessPhoneRaw}`}
             whileHover={{ y: -1 }}
-            className="text-sm text-charcoal/80 hover:text-burgundy transition-colors"
+            className="whitespace-nowrap text-sm text-charcoal/80 transition-colors hover:text-burgundy"
             aria-label={`Call Zahid Decor at ${businessPhone}`}
           >
             {businessPhone}
           </motion.a>
 
-          {/* WhatsApp Button */}
           <motion.a
             href={whatsappLink}
             target="_blank"
@@ -159,7 +163,7 @@ export default function Navbar() {
               stiffness: 300,
               damping: 20,
             }}
-            className="btn-primary !py-2.5 !px-5 text-sm"
+            className="btn-primary whitespace-nowrap !px-4 !py-2.5 text-sm xl:!px-5"
             aria-label="Chat with Zahid Decor on WhatsApp"
           >
             WhatsApp
@@ -168,6 +172,7 @@ export default function Navbar() {
 
         {/* ================= MOBILE MENU BUTTON ================= */}
         <motion.button
+          type="button"
           whileTap={{ scale: 0.9 }}
           whileHover={{ scale: 1.05 }}
           transition={{
@@ -175,7 +180,17 @@ export default function Navbar() {
             stiffness: 300,
             damping: 15,
           }}
-          className="lg:hidden text-burgundy p-1"
+          className="
+            flex
+            h-10
+            w-10
+            shrink-0
+            items-center
+            justify-center
+            rounded-md
+            text-burgundy
+            lg:hidden
+          "
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           aria-controls="mobile-navigation"
@@ -202,7 +217,7 @@ export default function Navbar() {
                 }}
                 className="block"
               >
-                <HiX size={28} />
+                <HiX size={27} />
               </motion.span>
             ) : (
               <motion.span
@@ -224,7 +239,7 @@ export default function Navbar() {
                 }}
                 className="block"
               >
-                <HiMenu size={28} />
+                <HiMenu size={27} />
               </motion.span>
             )}
           </AnimatePresence>
@@ -252,9 +267,17 @@ export default function Navbar() {
               duration: 0.35,
               ease: [0.22, 1, 0.36, 1],
             }}
-            className="lg:hidden overflow-hidden bg-ivory/98 backdrop-blur-md border-t border-charcoal/10"
+            className="
+              w-full
+              overflow-hidden
+              border-t
+              border-charcoal/10
+              bg-ivory/98
+              backdrop-blur-md
+              lg:hidden
+            "
           >
-            <ul className="container-x flex flex-col gap-1 py-4">
+            <ul className="container-x flex flex-col gap-1 py-3 sm:py-4">
               {/* Navigation Links */}
               {links.map((link, i) => (
                 <motion.li
@@ -277,10 +300,10 @@ export default function Navbar() {
                     end={link.to === "/"}
                     onClick={() => setOpen(false)}
                     className={({ isActive }) =>
-                      `block py-3 text-base border-b border-charcoal/5 transition-all duration-300 ${
+                      `block border-b border-charcoal/5 py-3 text-base transition-all duration-300 ${
                         isActive
-                          ? "text-burgundy font-medium pl-2"
-                          : "text-charcoal/80 hover:text-burgundy hover:pl-2"
+                          ? "pl-2 font-medium text-burgundy"
+                          : "text-charcoal/80 hover:pl-2 hover:text-burgundy"
                       }`
                     }
                   >
@@ -308,7 +331,23 @@ export default function Navbar() {
                 <a
                   href={`tel:+${businessPhoneRaw}`}
                   onClick={() => setOpen(false)}
-                  className="flex items-center justify-center w-full py-3 rounded-md border border-burgundy/20 text-burgundy hover:bg-burgundy hover:text-cream transition-all duration-300"
+                  className="
+                    flex
+                    w-full
+                    items-center
+                    justify-center
+                    rounded-md
+                    border
+                    border-burgundy/20
+                    px-4
+                    py-3
+                    text-center
+                    text-burgundy
+                    transition-all
+                    duration-300
+                    hover:bg-burgundy
+                    hover:text-cream
+                  "
                   aria-label={`Call Zahid Decor at ${businessPhone}`}
                 >
                   📞 {businessPhone}
@@ -336,7 +375,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="btn-primary w-full justify-center"
+                  className="btn-primary flex w-full justify-center"
                   aria-label="Chat with Zahid Decor on WhatsApp"
                 >
                   WhatsApp

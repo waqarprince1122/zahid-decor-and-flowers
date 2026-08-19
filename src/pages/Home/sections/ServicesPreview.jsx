@@ -8,7 +8,7 @@ export default function ServicesPreview() {
   const preview = serviceCategories.slice(0, 6)
 
   return (
-    <section className="py-20 sm:py-28 bg-ivory">
+    <section className="py-20 sm:py-15 bg-ivory">
       <div className="container-x">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14">
           <SectionHeading
