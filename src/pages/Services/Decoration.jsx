@@ -36,6 +36,30 @@ export default function Decoration() {
     });
   }, [currentPage]);
 
+  // Page-level SEO tags
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title =
+      "Decoration Services | Wedding & Event Decoration Lahore — Zahid Decor and Flowers";
+
+    let meta = document.querySelector('meta[name="description"]');
+    const prevContent = meta?.getAttribute("content") ?? null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "Wedding, Nikah, Mehndi and event decoration from Lahore's Best Flower Shop. Elegant floral styling with Fresh Flowers Lahore and reliable Flower Delivery Lahore-wide.",
+    );
+
+    return () => {
+      document.title = prevTitle;
+      if (meta && prevContent !== null) meta.setAttribute("content", prevContent);
+    };
+  }, []);
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -51,7 +75,7 @@ export default function Decoration() {
             transition={{ duration: 0.6, ease: easeLux }}
             className="eyebrow mb-4"
           >
-            Decoration Services
+            Decoration Services — Flower Shop Lahore
           </motion.p>
 
           <motion.h1
@@ -70,7 +94,7 @@ export default function Decoration() {
             </span>
           </motion.h1>
 
-          {/* <motion.p
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -81,9 +105,10 @@ export default function Decoration() {
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-charcoal-soft/80 sm:text-lg"
           >
             From weddings and Nikah ceremonies to birthdays, bridal rooms, car
-            decoration and private events, we transform every space with
-            beautiful floral details and elegant styling.
-          </motion.p> */}
+            decoration and private events, our team — Lahore&rsquo;s Best
+            Flower Shop for styling — transforms every space with Fresh
+            Flowers and elegant, hand-finished details.
+          </motion.p>
         </div>
       </section>
 
@@ -123,7 +148,7 @@ export default function Decoration() {
                 <div className="relative h-64 overflow-hidden sm:h-72">
                   <img
                     src={item.image}
-                    alt={`${item.title} - Zahid Decor & Flowers`}
+                    alt={`${item.title} — Wedding & Event Decoration Lahore | Zahid Decor and Flowers`}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />

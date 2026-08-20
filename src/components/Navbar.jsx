@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { HiMenu, HiX } from "react-icons/hi";
+import { HiOutlinePhone } from "react-icons/hi2";
 import { siteConfig } from "../data/siteConfig";
 
 const links = [
@@ -61,7 +62,7 @@ export default function Navbar() {
           : "bg-transparent py-3 sm:py-4 lg:py-5"
       }`}
     >
-      <nav className="container-x flex min-h-[56px] w-full items-center justify-between gap-3 sm:min-h-[60px] lg:min-h-[64px]">
+      <nav className="container-x flex min-h-[64px] w-full items-center justify-between gap-3 sm:min-h-[68px] lg:min-h-[72px]">
         {/* ================= LOGO ================= */}
         <NavLink
           to="/"
@@ -81,26 +82,26 @@ export default function Navbar() {
             }}
             className="
               block
-              h-9
+              h-12
               w-auto
-              max-w-[145px]
+              max-w-[170px]
               object-contain
               object-left
 
-              xs:h-10
-              xs:max-w-[155px]
+              xs:h-[3.25rem]
+              xs:max-w-[185px]
 
-              sm:h-11
-              sm:max-w-[175px]
+              sm:h-14
+              sm:max-w-[200px]
 
-              md:h-12
-              md:max-w-[200px]
+              md:h-[3.6rem]
+              md:max-w-[215px]
 
-              lg:h-14
-              lg:max-w-[225px]
+              lg:h-16
+              lg:max-w-[235px]
 
-              xl:h-16
-              xl:max-w-[250px]
+              xl:h-[4.5rem]
+              xl:max-w-[260px]
             "
           />
         </NavLink>
@@ -170,80 +171,113 @@ export default function Navbar() {
           </motion.a>
         </div>
 
-        {/* ================= MOBILE MENU BUTTON ================= */}
-        <motion.button
-          type="button"
-          whileTap={{ scale: 0.9 }}
-          whileHover={{ scale: 1.05 }}
-          transition={{
-            type: "spring",
-            stiffness: 300,
-            damping: 15,
-          }}
-          className="
-            flex
-            h-10
-            w-10
-            shrink-0
-            items-center
-            justify-center
-            rounded-md
-            text-burgundy
-            lg:hidden
-          "
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          aria-controls="mobile-navigation"
-          onClick={() => setOpen((v) => !v)}
-        >
-          <AnimatePresence mode="wait" initial={false}>
-            {open ? (
-              <motion.span
-                key="close"
-                initial={{
-                  rotate: -90,
-                  opacity: 0,
-                }}
-                animate={{
-                  rotate: 0,
-                  opacity: 1,
-                }}
-                exit={{
-                  rotate: 90,
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 0.2,
-                }}
-                className="block"
-              >
-                <HiX size={27} />
-              </motion.span>
-            ) : (
-              <motion.span
-                key="menu"
-                initial={{
-                  rotate: 90,
-                  opacity: 0,
-                }}
-                animate={{
-                  rotate: 0,
-                  opacity: 1,
-                }}
-                exit={{
-                  rotate: -90,
-                  opacity: 0,
-                }}
-                transition={{
-                  duration: 0.2,
-                }}
-                className="block"
-              >
-                <HiMenu size={27} />
-              </motion.span>
-            )}
-          </AnimatePresence>
-        </motion.button>
+        {/* ================= MOBILE RIGHT SIDE (Call + Menu) ================= */}
+        <div className="flex shrink-0 items-center gap-2 lg:hidden">
+          {/* Quick Call Button — always visible, opens phone dialer directly */}
+          <motion.a
+            href={`tel:+${businessPhoneRaw}`}
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 15,
+            }}
+            className="
+              flex
+              h-10
+              w-10
+              shrink-0
+              items-center
+              justify-center
+              rounded-full
+              border
+              border-burgundy/20
+              text-burgundy
+              transition-colors
+              duration-300
+              hover:bg-burgundy
+              hover:text-cream
+            "
+            aria-label={`Call Zahid Decor at ${businessPhone}`}
+          >
+            <HiOutlinePhone size={20} />
+          </motion.a>
+
+          {/* Mobile Menu Button */}
+          <motion.button
+            type="button"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.05 }}
+            transition={{
+              type: "spring",
+              stiffness: 300,
+              damping: 15,
+            }}
+            className="
+              flex
+              h-10
+              w-10
+              shrink-0
+              items-center
+              justify-center
+              rounded-md
+              text-burgundy
+            "
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {open ? (
+                <motion.span
+                  key="close"
+                  initial={{
+                    rotate: -90,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    rotate: 0,
+                    opacity: 1,
+                  }}
+                  exit={{
+                    rotate: 90,
+                    opacity: 0,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                  }}
+                  className="block"
+                >
+                  <HiX size={27} />
+                </motion.span>
+              ) : (
+                <motion.span
+                  key="menu"
+                  initial={{
+                    rotate: 90,
+                    opacity: 0,
+                  }}
+                  animate={{
+                    rotate: 0,
+                    opacity: 1,
+                  }}
+                  exit={{
+                    rotate: -90,
+                    opacity: 0,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                  }}
+                  className="block"
+                >
+                  <HiMenu size={27} />
+                </motion.span>
+              )}
+            </AnimatePresence>
+          </motion.button>
+        </div>
       </nav>
 
       {/* ================= MOBILE NAVIGATION ================= */}
@@ -336,6 +370,7 @@ export default function Navbar() {
                     w-full
                     items-center
                     justify-center
+                    gap-2
                     rounded-md
                     border
                     border-burgundy/20
@@ -350,7 +385,8 @@ export default function Navbar() {
                   "
                   aria-label={`Call Zahid Decor at ${businessPhone}`}
                 >
-                  📞 {businessPhone}
+                  <HiOutlinePhone size={18} />
+                  {businessPhone}
                 </a>
               </motion.li>
 

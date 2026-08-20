@@ -5,8 +5,8 @@ export const serviceCategories = [
     title: "Flower Bouquets",
     group: "Flowers",
     description:
-      "Fresh hand-tied bouquets designed for birthdays, anniversaries, celebrations and everyday gifting.",
-    image: "/Flower-Bouquets.jpg",
+      "Fresh hand-tied bouquets from Lahore's trusted Flower Shop, designed for birthdays, anniversaries, celebrations and everyday gifting.",
+    image: "/serviceimg/Mixed-Flower-Bouquet-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -15,8 +15,8 @@ export const serviceCategories = [
     title: "Chocolate Bouquets",
     group: "Flowers",
     description:
-      "Beautiful chocolate and flower combinations, perfect for birthdays, anniversaries and special gifting.",
-    image: "/Chocolate-Bouquets.jpg",
+      "Beautiful chocolate and flower combinations from our Online Flower Shop Lahore, perfect for birthdays, anniversaries and special gifting.",
+    image: "/serviceimg/Chocolate-Bouquet-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -25,8 +25,8 @@ export const serviceCategories = [
     title: "Gift Hampers",
     group: "Flowers",
     description:
-      "Premium hampers combining flowers, chocolates, gifts and thoughtful finishing touches.",
-    image: "/Gift-Hampers.jpg",
+      "Premium hampers combining fresh flowers, chocolates, gifts and thoughtful finishing touches, delivered anywhere in Lahore.",
+    image: "/serviceimg/Mixed-Rose-Box-Bouquet-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -35,8 +35,8 @@ export const serviceCategories = [
     title: "Bridal Flowers",
     group: "Flowers",
     description:
-      "Elegant bridal bouquets and floral arrangements designed around your wedding theme.",
-    image: "bridal-flowers.jpg",
+      "Elegant Wedding Flowers Lahore brides trust, with bridal bouquets and floral arrangements designed around your wedding theme.",
+    image: "/serviceimg/Red-Rose-Baby-Breath-Bouquet-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -45,8 +45,8 @@ export const serviceCategories = [
     title: "Bridal Haar",
     group: "Flowers",
     description:
-      "Fresh floral haar designed for Mehndi, Dholki and traditional wedding celebrations.",
-    image: "Bridal-Haar.jpg",
+      "Fresh floral haar made from premium Fresh Flowers Lahore, designed for Mehndi, Dholki and traditional wedding celebrations.",
+    image: "/serviceimg/Floral-Jewelry-Set-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -55,8 +55,8 @@ export const serviceCategories = [
     title: "Floral Jewellery",
     group: "Flowers",
     description:
-      "Fresh flower jewellery including floral bangles, bracelets and traditional wedding designs.",
-    image: "/floral-jewellery.jpg",
+      "Fresh flower jewellery including floral bangles, bracelets and traditional wedding designs, handcrafted with care.",
+    image: "/serviceimg/Floral-Jewelry-Set-2.jpeg",
     link: "/services/flowers",
   },
 
@@ -65,8 +65,8 @@ export const serviceCategories = [
     title: "Flower Baskets",
     group: "Flowers",
     description:
-      "Fresh flowers beautifully arranged in elegant baskets for gifting and celebrations.",
-    image: "/flower-baskets.jpg",
+      "Fresh flowers beautifully arranged in elegant baskets for gifting and celebrations, with Flower Delivery Lahore available city-wide.",
+    image: "/serviceimg/Red-White-Rose-Basket-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -75,8 +75,8 @@ export const serviceCategories = [
     title: "Surprise Flower Delivery",
     group: "Flowers",
     description:
-      "Send fresh flowers directly to your loved ones with convenient home delivery.",
-    image: "/surprise-flower-delivery.jpg",
+      "Send fresh flowers directly to your loved ones with our reliable Same Day Flower Delivery Lahore service.",
+    image: "/serviceimg/Red-Rose-Bouquet---Kraft-Wrap-1.jpeg",
     link: "/services/flowers",
   },
 
@@ -85,8 +85,8 @@ export const serviceCategories = [
     title: "Wedding Decoration",
     group: "Decoration",
     description:
-      "Complete wedding stage, venue, walkway and floral decoration for beautiful celebrations.",
-    image: "/wedding-decoration.jpg",
+      "Complete wedding stage, venue, walkway and floral decoration crafted by Lahore's Best Flower Shop for beautiful celebrations.",
+    image: "/serviceimg/Bridal-Room-Decoration-1.jpeg",
     link: "/services/decoration",
   },
 
@@ -95,8 +95,8 @@ export const serviceCategories = [
     title: "Nikah Decoration",
     group: "Decoration",
     description:
-      "Elegant Nikah setups with beautiful florals, draping and refined decorative details.",
-    image: "/nikah-decoration.jpg",
+      "Elegant Nikah setups with beautiful florals, draping and refined decorative details for your special day.",
+    image: "/serviceimg/Bridal-Room-Decoration-2.jpeg",
     link: "/services/decoration",
   },
 
@@ -105,8 +105,8 @@ export const serviceCategories = [
     title: "Mehndi Decoration",
     group: "Decoration",
     description:
-      "Colourful Mehndi setups with flowers, lights, draping and beautiful traditional details.",
-    image: "/mehndi-decoration.jpg",
+      "Colourful Mehndi setups with fresh flowers, lights, draping and beautiful traditional details.",
+    image: "/serviceimg/Bridal-Room-Decoration-60.jpeg",
     link: "/services/decoration",
   },
 
@@ -116,7 +116,7 @@ export const serviceCategories = [
     group: "Decoration",
     description:
       "Traditional and modern Dholki decoration with colourful floral and decorative elements.",
-    image: "/dholki-decoration.jpg",
+    image: "/serviceimg/Bridal-Room-Decoration-65.jpeg",
     link: "/services/decoration",
   },
 
@@ -125,8 +125,8 @@ export const serviceCategories = [
     title: "Car Decoration",
     group: "Decoration",
     description:
-      "Beautiful bridal car decoration with fresh flowers, ribbons and elegant styling.",
-    image: "/car-decoration.jpg",
+      "Beautiful bridal car decoration with fresh flowers, ribbons and elegant styling for the perfect send-off.",
+    image: "/serviceimg/Car-Decoration-1.jpeg",
     link: "/services/decoration",
   },
 
@@ -135,8 +135,8 @@ export const serviceCategories = [
     title: "Bridal Room Decoration",
     group: "Decoration",
     description:
-      "Romantic bridal room decoration with flowers, draping, lighting and elegant details.",
-    image: "/bridal-room-decoration.jpg",
+      "Romantic bridal room decoration with flowers, draping, lighting and elegant details for your big day.",
+    image: "/serviceimg/Bridal-Room-Decoration-3.jpeg",
     link: "/services/decoration",
   },
 
@@ -145,8 +145,8 @@ export const serviceCategories = [
     title: "Birthday Decoration",
     group: "Decoration",
     description:
-      "Creative birthday setups with balloons, flowers, backdrops and themed decoration.",
-    image: "/birthday-decoration.jpg",
+      "Creative birthday setups with balloons, Birthday Flowers Lahore loves, backdrops and themed decoration.",
+    image: "/serviceimg/Teddy-Bouquet-1.jpeg",
     link: "/services/decoration",
   },
 
@@ -156,7 +156,7 @@ export const serviceCategories = [
     group: "Decoration",
     description:
       "Elegant engagement setups with floral backdrops, stages, lighting and premium styling.",
-    image: "/engagement-decoration.jpg",
+    image: "/serviceimg/Bridal-Room-Decoration-Heart-Petals-1.jpeg",
     link: "/services/decoration",
   },
 
@@ -165,8 +165,8 @@ export const serviceCategories = [
     title: "Event Decoration",
     group: "Decoration",
     description:
-      "Professional decoration for private parties, corporate events, anniversaries and celebrations.",
-    image: "/event-decoration.jpg",
+      "Professional decoration for private parties, corporate events, anniversaries and celebrations across Lahore.",
+    image: "/serviceimg/Event-Table-Decoration.avif",
     link: "/services/decoration",
   },
 ];
@@ -175,52 +175,48 @@ export const flowerServices = [
     id: "rose-bouquets",
     title: "Rose Bouquets",
     description:
-      "Beautiful fresh rose bouquets arranged in classic, romantic and premium styles for every special occasion.",
-    image: "/rose-bouquets.jpg",
+      "Beautiful fresh rose bouquets arranged in classic, romantic and premium styles for every special occasion in Lahore.",
+    image: "/serviceimg/Red-Rose-Bouquet---Kraft-Wrap-2.jpeg",
   },
 
   {
     id: "mixed-flower-bouquets",
     title: "Mixed Flower Bouquets",
     description:
-      "Fresh seasonal flowers combined with beautiful colours, textures and natural fragrance.",
-    image: "/mixed-flower-bouquets.jpg",
+      "Fresh seasonal flowers combined with beautiful colours, textures and natural fragrance, sourced daily for our customers.",
+    image: "/serviceimg/Mixed-Flower-Bouquet-1.jpeg",
   },
 
   {
     id: "premium-bouquets",
     title: "Premium Bouquets",
     description:
-      "Luxury floral arrangements made with premium and imported flowers for special occasions.",
-    image:
-      "https://images.pexels.com/photos/20230082/pexels-photo-20230082.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Luxury floral arrangements made with premium and imported flowers, a favourite from Lahore's Best Flower Shop.",
+    image: "/serviceimg/Giant-Red-Rose-Bouquet-1.jpeg",
   },
 
   {
     id: "birthday-bouquets",
     title: "Birthday Bouquets",
     description:
-      "Colourful birthday flower arrangements designed to make every birthday celebration memorable.",
-    image:
-      "https://images.pexels.com/photos/8103099/pexels-photo-8103099.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Colourful Birthday Flowers Lahore arrangements designed to make every birthday celebration memorable.",
+    image: "/serviceimg/Pink-Rose-Round-Bouquet-1.jpeg",
   },
 
   {
     id: "anniversary-bouquets",
     title: "Anniversary Bouquets",
     description:
-      "Romantic flower arrangements created for anniversaries, proposals and special moments.",
-    image:
-      "https://images.pexels.com/photos/27356362/pexels-photo-27356362.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Romantic Anniversary Flowers Lahore arrangements created for anniversaries, proposals and special moments.",
+    image: "/serviceimg/Red-Rose-Round-Bouquet-Large-1.jpeg",
   },
 
   {
     id: "bridal-bouquets",
     title: "Bridal Bouquets",
     description:
-      "Elegant bridal bouquets designed to complement your wedding dress and overall theme.",
-    image:
-      "https://images.pexels.com/photos/12306233/pexels-photo-12306233.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Elegant bridal bouquets, part of our signature Wedding Flowers Lahore collection, designed to complement your dress and theme.",
+    image: "/serviceimg/Red-Rose-Baby-Breath-Bouquet-1.jpeg",
   },
 
   {
@@ -228,8 +224,7 @@ export const flowerServices = [
     title: "Chocolate Bouquets",
     description:
       "Beautiful chocolate and flower combinations perfect for birthdays, anniversaries and gifting.",
-    image:
-      "https://images.pexels.com/photos/32397348/pexels-photo-32397348.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Chocolate-Bouquet-1.jpeg",
   },
 
   {
@@ -237,8 +232,7 @@ export const flowerServices = [
     title: "Gift Hampers",
     description:
       "Premium hampers combining flowers, chocolates, gifts and thoughtful finishing touches.",
-    image:
-      "https://images.pexels.com/photos/5714455/pexels-photo-5714455.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Mixed-Rose-Box-Bouquet-1.jpeg",
   },
 
   {
@@ -246,17 +240,15 @@ export const flowerServices = [
     title: "Flower Baskets",
     description:
       "Fresh flowers beautifully arranged in elegant baskets for gifting and celebrations.",
-    image:
-      "https://images.pexels.com/photos/15801501/pexels-photo-15801501.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Red-White-Rose-Basket-1.jpeg",
   },
 
   {
     id: "floral-arrangements",
     title: "Floral Arrangements",
     description:
-      "Creative floral arrangements designed for homes, offices, events and special occasions.",
-    image:
-      "https://images.pexels.com/photos/9766999/pexels-photo-9766999.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Creative floral arrangements designed for homes, offices, events and special occasions across Lahore.",
+    image: "/serviceimg/Rose-Gladiolus-Bouquet-1.jpeg",
   },
 
   {
@@ -264,8 +256,7 @@ export const flowerServices = [
     title: "Bridal Haar",
     description:
       "Fresh floral haar designed for Mehndi, Dholki and traditional wedding celebrations.",
-    image:
-      "https://images.pexels.com/photos/5589755/pexels-photo-5589755.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Floral-Jewelry-Set-1.jpeg",
   },
 
   {
@@ -273,8 +264,7 @@ export const flowerServices = [
     title: "Floral Jewellery",
     description:
       "Fresh flower jewellery including floral bangles, bracelets, earrings and traditional designs.",
-    image:
-      "https://images.pexels.com/photos/35719222/pexels-photo-35719222.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Floral-Jewelry-Set-2.jpeg",
   },
 
   {
@@ -282,8 +272,7 @@ export const flowerServices = [
     title: "Mehndi & Dholki Flowers",
     description:
       "Beautiful floral arrangements and accessories specially designed for pre-wedding celebrations.",
-    image:
-      "https://images.pexels.com/photos/31765529/pexels-photo-31765529.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Mixed-Rose-Round-Bouquet-2.jpeg",
   },
 
   {
@@ -291,17 +280,15 @@ export const flowerServices = [
     title: "Flower Centrepieces",
     description:
       "Elegant floral centrepieces designed for dining tables, weddings, corporate events and celebrations.",
-    image:
-      "https://images.pexels.com/photos/37900956/pexels-photo-37900956.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Purple-White-Bouquet-1.jpeg",
   },
 
   {
     id: "office-flower-arrangements",
     title: "Office Flower Arrangements",
     description:
-      "Professional floral arrangements for offices, reception areas and business spaces.",
-    image:
-      "https://images.pexels.com/photos/27559507/pexels-photo-27559507.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Professional floral arrangements for offices, reception areas and business spaces, delivered fresh across Lahore.",
+    image: "/serviceimg/White-Rose-Bouquet-1.jpeg",
   },
 
   {
@@ -309,35 +296,31 @@ export const flowerServices = [
     title: "Event Flower Arrangements",
     description:
       "Custom floral designs for weddings, engagements, birthdays, corporate events and private celebrations.",
-    image:
-      "https://images.pexels.com/photos/6479553/pexels-photo-6479553.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Flower-Shop-Display-1.jpeg",
   },
 
   {
     id: "surprise-flower-delivery",
     title: "Surprise Flower Delivery",
     description:
-      "Send fresh flowers directly to your loved ones with convenient home delivery.",
-    image:
-      "https://images.pexels.com/photos/3838326/pexels-photo-3838326.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Send fresh flowers directly to your loved ones with convenient Flower Delivery Lahore, straight to their door.",
+    image: "/serviceimg/Red-Rose-Bouquet---Pink-Wrap-1.jpeg",
   },
 
   {
     id: "same-day-flower-delivery",
     title: "Same-Day Flower Delivery",
     description:
-      "Order fresh flowers for same-day delivery when you need a beautiful surprise delivered on time.",
-    image:
-      "https://images.pexels.com/photos/20416142/pexels-photo-20416142.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Order fresh flowers for Same Day Flower Delivery Lahore when you need a beautiful surprise delivered on time.",
+    image: "/serviceimg/Red-Rose-Bouquet---Blue-Wrap-1.jpeg",
   },
 
   {
     id: "custom-flowers",
     title: "Custom Flower Arrangements",
     description:
-      "Tell us your occasion, preferred colours and budget and we will create a personalised arrangement.",
-    image:
-      "https://images.pexels.com/photos/7858797/pexels-photo-7858797.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      "Tell us your occasion, preferred colours and budget, and our Online Flower Shop Lahore team will create a personalised arrangement.",
+    image: "/serviceimg/Red-Rose-Gladiolus-Bouquet-2.jpeg",
   },
 
   {
@@ -345,8 +328,7 @@ export const flowerServices = [
     title: "Corporate Flower Gifting",
     description:
       "Elegant floral gifts and arrangements for clients, employees, business partners and corporate celebrations.",
-    image:
-      "https://images.pexels.com/photos/839441/pexels-photo-839441.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Get-Well-Bouquet-1.jpeg",
   },
 ];
 // =====================================================
@@ -359,7 +341,7 @@ export const decorationServices = [
     id: "wedding-stage",
     title: "Wedding Decoration",
     description:
-      "Complete wedding stage, walkway and venue styling with elegant flowers, draping and premium details.",
+      "Complete wedding stage, walkway and venue styling with elegant flowers, draping and premium details, backed by Lahore's leading Flower Shop.",
     image:
       "https://images.pexels.com/photos/27940585/pexels-photo-27940585.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
@@ -405,8 +387,7 @@ export const decorationServices = [
     title: "Car Decoration",
     description:
       "Bridal car decoration using fresh flowers, ribbons and elegant floral styling for the perfect send-off.",
-    image:
-      "https://images.pexels.com/photos/11474248/pexels-photo-11474248.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Car-Decoration-2.jpeg",
   },
 
   {
@@ -414,8 +395,7 @@ export const decorationServices = [
     title: "Premium Bridal Car",
     description:
       "Luxury bridal car styling with premium flowers and a sophisticated decorative finish.",
-    image:
-      "https://images.pexels.com/photos/25052928/pexels-photo-25052928.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Car-Decoration-3.jpeg",
   },
 
   {
@@ -423,8 +403,7 @@ export const decorationServices = [
     title: "Bridal Room Decoration",
     description:
       "Romantic bridal room styling with fresh flowers, draping, warm lighting and elegant details.",
-    image:
-      "https://images.pexels.com/photos/4959835/pexels-photo-4959835.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Bridal-Room-Decoration-6.jpeg",
   },
 
   {
@@ -504,8 +483,7 @@ export const decorationServices = [
     title: "Table Decoration",
     description:
       "Elegant floral table arrangements and centrepieces for weddings, parties and special events.",
-    image:
-      "https://images.pexels.com/photos/27940585/pexels-photo-27940585.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    image: "/serviceimg/Event-Table-Decoration.avif",
   },
 
   {

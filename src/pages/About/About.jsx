@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { HiOutlineHeart, HiOutlineSparkles, HiOutlineClock, HiOutlineTruck } from 'react-icons/hi2'
@@ -13,17 +14,17 @@ const values = [
   {
     icon: HiOutlineSparkles,
     title: 'Premium Quality',
-    description: 'We work only with fresh, seasonal stock sourced daily from trusted growers.',
+    description: 'We work only with Fresh Flowers Lahore growers deliver daily, never held in storage.',
   },
   {
     icon: HiOutlineClock,
     title: 'Always On Time',
-    description: 'From engagements to same-day gifts, we treat your timeline as our own.',
+    description: 'From engagements to Same Day Flower Delivery Lahore, we treat your timeline as our own.',
   },
   {
     icon: HiOutlineTruck,
     title: 'Reliable Delivery',
-    description: 'Careful handling and tracked delivery across Lahore, every time.',
+    description: 'Careful handling and tracked Bouquet Delivery Lahore across the city, every time.',
   },
 ]
 
@@ -35,6 +36,29 @@ const stats = [
 ]
 
 export default function About() {
+  useEffect(() => {
+    const prevTitle = document.title
+    document.title =
+      'About Us | Zahid Decor and Flowers — Best Flower Shop in Lahore'
+
+    let meta = document.querySelector('meta[name="description"]')
+    const prevContent = meta?.getAttribute('content') ?? null
+    if (!meta) {
+      meta = document.createElement('meta')
+      meta.setAttribute('name', 'description')
+      document.head.appendChild(meta)
+    }
+    meta.setAttribute(
+      'content',
+      'Meet Zahid Decor and Flowers, a trusted Flower Shop Lahore families rely on for Fresh Flowers, Wedding Flowers and Same Day Flower Delivery Lahore-wide.'
+    )
+
+    return () => {
+      document.title = prevTitle
+      if (meta && prevContent !== null) meta.setAttribute('content', prevContent)
+    }
+  }, [])
+
   return (
     <>
       {/* Hero */}
@@ -47,7 +71,7 @@ export default function About() {
             transition={{ duration: 0.5 }}
             className="eyebrow mb-4"
           >
-            About Zahid Decor and Flowers
+            About Zahid Decor and Flowers — Flower Shop Lahore
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 18 }}
@@ -55,8 +79,17 @@ export default function About() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-4xl sm:text-5xl font-semibold text-charcoal text-balance leading-[1.12]"
           >
-            Designing Floral Moments Since Day One
+            Designing Floral Moments Across Lahore
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mt-5 text-charcoal-soft/90 leading-relaxed"
+          >
+            As an Online Flower Shop Lahore trusts for weddings, birthdays and everyday
+            gifting, we pair Fresh Flowers with dependable Flower Delivery Lahore-wide.
+          </motion.p>
         </div>
       </section>
 
@@ -72,13 +105,13 @@ export default function About() {
           >
             <img
               src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?auto=format&fit=crop&w=700&q=80"
-              alt="Fresh flowers being prepared"
+              alt="Fresh Flowers Lahore being prepared by our design team"
               loading="lazy"
               className="rounded-2xl h-64 sm:h-80 w-full object-cover mt-8"
             />
             <img
               src="https://images.unsplash.com/photo-1462275646964-a0e3386b89fa?auto=format&fit=crop&w=700&q=80"
-              alt="Finished floral arrangement"
+              alt="Finished bouquet from Zahid Decor and Flowers, Best Flower Shop in Lahore"
               loading="lazy"
               className="rounded-2xl h-64 sm:h-80 w-full object-cover"
             />
@@ -91,16 +124,18 @@ export default function About() {
             </h2>
             <StemDivider className="!justify-start -ml-1" />
             <p className="mt-2 text-charcoal-soft/90 leading-relaxed">
-              Zahid Decor and Flowers started as a modest flower stall, run on a simple
-              promise: every arrangement leaves our hands the way we&rsquo;d want to receive
-              it ourselves. As word spread through weddings, Nikah ceremonies and family
-              celebrations across the city, that promise grew into a full design studio.
+              Zahid Decor and Flowers started as a modest flower stall in Lahore, run on a
+              simple promise: every arrangement leaves our hands the way we&rsquo;d want to
+              receive it ourselves. As word spread through weddings, Nikah ceremonies and
+              family celebrations across the city, that promise grew into a full design
+              studio and one of the Best Flower Shop in Lahore choices for special occasions.
             </p>
             <p className="mt-4 text-charcoal-soft/90 leading-relaxed">
-              Today our team handles everything from a single gifting bouquet to a
-              complete wedding venue transformation — but the process hasn&rsquo;t changed.
-              We still select stock ourselves, design by hand, and treat every order as
-              if it were for our own family.
+              Today our team handles everything from a single gifting bouquet to a complete
+              wedding venue transformation, backed by a reliable Online Flower Shop Lahore
+              platform and Same Day Flower Delivery Lahore when time is tight. We still
+              select stock ourselves, design by hand, and treat every order as if it were
+              for our own family.
             </p>
           </div>
         </div>
@@ -150,6 +185,10 @@ export default function About() {
                   desc: 'No outsourcing — the hands that consult with you are the ones who build your setup.',
                 },
                 {
+                  title: 'Flowers for Every Occasion',
+                  desc: 'Wedding Flowers, Birthday Flowers and Anniversary Flowers in Lahore, all designed in-house.',
+                },
+                {
                   title: 'Flexible for Any Scale',
                   desc: 'From a single bouquet to a 500-guest wedding, our process scales with you.',
                 },
@@ -178,7 +217,7 @@ export default function About() {
           >
             <img
               src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80"
-              alt="Wedding stage decorated by Zahid Decor and Flowers"
+              alt="Wedding stage styled with Wedding Flowers Lahore by Zahid Decor and Flowers"
               loading="lazy"
               className="rounded-[2rem] shadow-soft h-[380px] sm:h-[440px] w-full object-cover"
             />
@@ -211,7 +250,8 @@ export default function About() {
             Let&rsquo;s Design Your Next Occasion
           </h2>
           <p className="mt-4 text-charcoal-soft/90">
-            Share your date and vision — we&rsquo;ll take it from there.
+            Share your date and vision — as Lahore&rsquo;s Best Flower Shop, we&rsquo;ll take
+            it from there, with Same Day Flower Delivery Lahore whenever you need it.
           </p>
           <Link to="/contact" className="btn-primary mt-8 inline-flex">Get in Touch</Link>
         </div>

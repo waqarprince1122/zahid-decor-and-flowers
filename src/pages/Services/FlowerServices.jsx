@@ -36,6 +36,30 @@ export default function FlowerServicesPage() {
     });
   }, [currentPage]);
 
+  // Page-level SEO tags
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title =
+      "Flower Services | Fresh Flowers & Bouquet Delivery Lahore — Zahid Decor and Flowers";
+
+    let meta = document.querySelector('meta[name="description"]');
+    const prevContent = meta?.getAttribute("content") ?? null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "Browse Fresh Flowers Lahore trusts — bouquets, hampers and custom arrangements from an Online Flower Shop Lahore with Same Day Flower Delivery Lahore-wide.",
+    );
+
+    return () => {
+      document.title = prevTitle;
+      if (meta && prevContent !== null) meta.setAttribute("content", prevContent);
+    };
+  }, []);
+
   return (
     <>
       {/* ================= HERO ================= */}
@@ -54,7 +78,7 @@ export default function FlowerServicesPage() {
             }}
             className="eyebrow mb-4"
           >
-            Flower Services
+            Flower Services — Online Flower Shop Lahore
           </motion.p>
 
           <motion.h1
@@ -73,7 +97,7 @@ export default function FlowerServicesPage() {
             </span>
           </motion.h1>
 
-          {/* <motion.p
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -84,9 +108,10 @@ export default function FlowerServicesPage() {
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-charcoal-soft/80 sm:text-lg"
           >
             From fresh flower bouquets and romantic roses to premium
-            arrangements, gift hampers and custom floral designs, we create
-            beautiful flowers for every special occasion.
-          </motion.p> */}
+            arrangements, Wedding Flowers, Birthday Flowers and Anniversary
+            Flowers Lahore loves, every order ships with reliable Bouquet
+            Delivery Lahore and Same Day Flower Delivery when you need it fast.
+          </motion.p>
         </div>
       </section>
 
@@ -126,7 +151,7 @@ export default function FlowerServicesPage() {
                 <div className="relative h-64 overflow-hidden sm:h-72">
                   <img
                     src={item.image}
-                    alt={`${item.title} - Zahid Decor & Flowers`}
+                    alt={`${item.title} — Fresh Flowers Lahore | Zahid Decor and Flowers`}
                     loading="lazy"
                     className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                   />

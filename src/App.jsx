@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 
 import MainLayout from "./layouts/MainLayout";
@@ -13,13 +13,16 @@ import Decoration from "./pages/Services/Decoration";
 
 import Gallery from "./pages/Gallery/Gallery";
 import Contact from "./pages/Contact/Contact";
-import NotFound from "./pages/NotFound";
 
 export default function App() {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence
+      mode="wait"
+      initial={false}
+      onExitComplete={() => console.log("✅ EXIT COMPLETE:", location.pathname)}
+    >
       <Routes location={location} key={location.pathname}>
         <Route element={<MainLayout />}>
           {/* Home */}
@@ -92,15 +95,8 @@ export default function App() {
             }
           />
 
-          {/* 404 */}
-          <Route
-            path="*"
-            element={
-              <PageTransition>
-                <NotFound />
-              </PageTransition>
-            }
-          />
+          {/* Unknown route → redirect to Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </AnimatePresence>

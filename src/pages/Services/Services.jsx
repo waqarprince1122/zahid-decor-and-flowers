@@ -36,6 +36,30 @@ export default function Services() {
     setCurrentPage(page);
   };
 
+  // Page-level SEO tags
+  useEffect(() => {
+    const prevTitle = document.title;
+    document.title =
+      "Our Services | Best Flower Shop in Lahore — Zahid Decor and Flowers";
+
+    let meta = document.querySelector('meta[name="description"]');
+    const prevContent = meta?.getAttribute("content") ?? null;
+    if (!meta) {
+      meta = document.createElement("meta");
+      meta.setAttribute("name", "description");
+      document.head.appendChild(meta);
+    }
+    meta.setAttribute(
+      "content",
+      "Explore every service from the Best Flower Shop in Lahore — Wedding Flowers, Birthday Flowers, Anniversary Flowers and full event decoration, with Flower Delivery Lahore-wide.",
+    );
+
+    return () => {
+      document.title = prevTitle;
+      if (meta && prevContent !== null) meta.setAttribute("content", prevContent);
+    };
+  }, []);
+
   return (
     <>
       {/* =========================
@@ -56,7 +80,7 @@ export default function Services() {
             }}
             className="eyebrow mb-4"
           >
-            What We Do
+            What We Do — Flower Shop Lahore
           </motion.p>
 
           <motion.h1
@@ -85,9 +109,10 @@ export default function Services() {
             }}
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-charcoal-soft/85 sm:text-lg"
           >
-            From a single gifting bouquet to a complete wedding transformation —
-            explore our flower and decoration services designed for your most
-            memorable occasions.
+            From a single gifting bouquet to a complete wedding transformation
+            — explore the flower and decoration services that make us the
+            Flower Shop Lahore turns to, with Fresh Flowers and Same Day
+            Flower Delivery Lahore-wide.
           </motion.p>
         </div>
       </section>

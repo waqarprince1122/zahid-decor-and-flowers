@@ -1,10 +1,41 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
 import { HiArrowUpRight } from "react-icons/hi2";
+import { products } from "../../../data/products";
 
 const easeLux = [0.16, 1, 0.3, 1];
+const ROTATE_MS = 3500;
 
 export default function Hero() {
+  const hasProducts = Array.isArray(products) && products.length > 0;
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    if (!hasProducts || products.length < 2) return undefined;
+    const id = setInterval(() => {
+      setIndex((current) => (current + 1) % products.length);
+    }, ROTATE_MS);
+    return () => clearInterval(id);
+  }, [hasProducts]);
+
+  const primary = hasProducts ? products[index % products.length] : null;
+  const secondary =
+    hasProducts && products.length > 1
+      ? products[(index + 1) % products.length]
+      : primary;
+
+  const primarySrc = primary?.image || "/heroimg2.png";
+  const secondarySrc = secondary?.image || "/heroimg1.png";
+
+  const primaryAlt = primary?.name
+    ? `${primary.name} – Fresh Flowers Lahore by Zahid Decor and Flowers`
+    : "Fresh flower bouquet by Zahid Decor and Flowers in Lahore";
+
+  const secondaryAlt = secondary?.name
+    ? `${secondary.name} – Wedding Flowers Lahore by Zahid Decor and Flowers`
+    : "Elegant wedding floral decoration by Zahid Decor and Flowers";
+
   return (
     <section
       aria-labelledby="hero-title"
@@ -42,7 +73,7 @@ export default function Hero() {
             }}
             className="eyebrow mb-5"
           >
-            Lahore&rsquo;s Bespoke Florist &amp; Decor Studio
+            Lahore&rsquo;s Bespoke Flower Shop &amp; Decor Studio
           </motion.p>
 
           {/* Main Heading */}
@@ -66,10 +97,9 @@ export default function Hero() {
             }}
             className="mt-6 max-w-xl text-base leading-relaxed text-charcoal-soft/90 sm:text-lg"
           >
-            From fresh flower bouquets and teddy bear gifts to car decoration,
-            wedding decor and event styling, we create beautiful floral moments
-            for Lahore&rsquo;s most memorable occasions — with convenient home
-            delivery available.
+            As a trusted Flower Shop Lahore turns to, we bring Fresh Flowers,
+            Wedding Flowers, birthday bouquets and full event decor to every
+            celebration — with Same Day Flower Delivery Lahore-wide.
           </motion.p>
 
           {/* Service Highlights */}
@@ -82,9 +112,9 @@ export default function Hero() {
             }}
             className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-sm text-charcoal-soft/80"
           >
-            <span>✦ Fresh Flowers</span>
-            <span>✦ Wedding Decor</span>
-            <span>✦ Home Delivery</span>
+            <span>✦ Fresh Flowers Lahore</span>
+            <span>✦ Wedding &amp; Birthday Flowers</span>
+            <span>✦ Same Day Delivery</span>
           </motion.div>
 
           {/* CTA Buttons */}
@@ -216,16 +246,23 @@ export default function Hero() {
                 ease: "easeInOut",
                 delay: 1.4,
               }}
-              className="overflow-hidden rounded-[1.5rem] border-4 border-white shadow-soft sm:rounded-[1.75rem] sm:border-8"
+              className="relative h-[270px] w-full overflow-hidden rounded-[1.5rem] border-4 border-white shadow-soft sm:h-[340px] sm:rounded-[1.75rem] sm:border-8 lg:h-[400px]"
             >
-              <img
-                src="/heroimg2.png"
-                alt="Fresh flower bouquet by Zahid Decor and Flowers in Lahore"
-                loading="eager"
-                fetchPriority="high"
-                decoding="async"
-                className="h-[270px] w-full object-cover sm:h-[340px] lg:h-[400px]"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={primary?.id ?? "primary-static"}
+                  src={primarySrc}
+                  alt={primaryAlt}
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </AnimatePresence>
             </motion.div>
           </motion.div>
 
@@ -260,15 +297,22 @@ export default function Hero() {
                 ease: "easeInOut",
                 delay: 1.7,
               }}
-              className="overflow-hidden rounded-[1.25rem] border-4 border-white shadow-soft sm:rounded-[1.5rem] sm:border-8"
+              className="relative h-[210px] w-full overflow-hidden rounded-[1.25rem] border-4 border-white shadow-soft sm:h-[260px] sm:rounded-[1.5rem] sm:border-8 lg:h-[300px]"
             >
-              <img
-                src="/heroimg1.png"
-                alt="Elegant wedding floral decoration by Zahid Decor and Flowers"
-                loading="lazy"
-                decoding="async"
-                className="h-[210px] w-full object-cover sm:h-[260px] lg:h-[300px] object-cover"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={secondary?.id ?? "secondary-static"}
+                  src={secondarySrc}
+                  alt={secondaryAlt}
+                  loading="lazy"
+                  decoding="async"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.6, ease: "easeInOut" }}
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </AnimatePresence>
             </motion.div>
           </motion.div>
 
