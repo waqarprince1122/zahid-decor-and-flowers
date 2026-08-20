@@ -1,10 +1,14 @@
-import { Link } from 'react-router-dom'
-import { FaInstagram, FaFacebookF, FaWhatsapp } from 'react-icons/fa'
-import { HiOutlineLocationMarker, HiOutlinePhone, HiOutlineMail } from 'react-icons/hi'
-import { siteConfig } from '../data/siteConfig'
+import { Link } from "react-router-dom";
+import { FaInstagram, FaFacebookF, FaWhatsapp, FaGoogle } from "react-icons/fa";
+import {
+  HiOutlineLocationMarker,
+  HiOutlinePhone,
+  HiOutlineMail,
+} from "react-icons/hi";
+import { siteConfig } from "../data/siteConfig";
 import { NavLink } from "react-router-dom";
 export default function Footer() {
-  const year = new Date().getFullYear()
+  const year = new Date().getFullYear();
 
   return (
     <footer className="bg-charcoal text-cream/80">
@@ -37,7 +41,7 @@ export default function Footer() {
           </p>
           <div className="flex items-center gap-3 mt-6">
             <a
-              href={siteConfig.social.instagram}
+              href="https://www.instagram.com/saim509778?igsh=MXNveWppaGc5MGJ2YQ=="
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -46,7 +50,7 @@ export default function Footer() {
               <FaInstagram />
             </a>
             <a
-              href={siteConfig.social.facebook}
+              href="https://www.facebook.com/share/1LFafLYqrn/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -62,6 +66,15 @@ export default function Footer() {
               className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/20 hover:border-gold hover:text-gold transition-colors"
             >
               <FaWhatsapp />
+            </a>
+            <a
+              href="https://g.page/r/CfER_yzCXwhmEBE/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Google Reviews"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-cream/20 hover:border-gold hover:text-gold transition-colors"
+            >
+              <FaGoogle />
             </a>
           </div>
         </div>
@@ -155,7 +168,18 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div className="container-x py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-cream/50">
           <p>© {year} Zahid Decor and Flowers. All rights reserved.</p>
-          <p>Designed with care in Lahore, Pakistan.</p>
+          <p>
+            Designed{" "}
+            <a
+              href="https://www.enterloops.com/en"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-gold-light transition-colors"
+            >
+              Enterloops
+            </a>{" "}
+            in Lahore, Pakistan.
+          </p>
         </div>
       </div>
     </footer>
