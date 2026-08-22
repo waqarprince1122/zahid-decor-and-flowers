@@ -504,3 +504,112 @@ export const decorationServices = [
       "https://images.pexels.com/photos/33485954/pexels-photo-33485954.jpeg?auto=compress&cs=tinysrgb&w=1200",
   },
 ];
+// =====================================================
+// BOOKING LOCATION SETTINGS
+// Flowers & Decoration services
+// Available in Lahore + selected nearby areas
+// =====================================================
+
+export const bookingLocations = [
+  // Lahore
+  {
+    id: "lahore",
+    name: "Lahore",
+    city: "Lahore",
+    type: "city",
+  },
+
+  // Lahore Areas
+  {
+    id: "dha-lahore",
+    name: "DHA Lahore",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "gulberg",
+    name: "Gulberg",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "johar-town",
+    name: "Johar Town",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "model-town",
+    name: "Model Town",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "bahria-town-lahore",
+    name: "Bahria Town Lahore",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "wapda-town",
+    name: "Wapda Town",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "valencia",
+    name: "Valencia Town",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "township",
+    name: "Township",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "cantt",
+    name: "Lahore Cantt",
+    city: "Lahore",
+    type: "area",
+  },
+  {
+    id: "raiwind",
+    name: "Raiwind",
+    city: "Lahore",
+    type: "area",
+  },
+
+  // Nearby Cities
+  {
+    id: "kasur",
+    name: "Kasur",
+    city: "Kasur",
+    type: "nearby-city",
+  },
+  {
+    id: "chunian",
+    name: "Chunian",
+    city: "Chunian",
+    type: "nearby-city",
+  },
+  {
+    id: "pattoki",
+    name: "Pattoki",
+    city: "Pattoki",
+    type: "nearby-city",
+  },
+  {
+    id: "sheikhupura",
+    name: "Sheikhupura",
+    city: "Sheikhupura",
+    type: "nearby-city",
+  },
+  {
+    id: "muridke",
+    name: "Muridke",
+    city: "Muridke",
+    type: "nearby-city",
+  },
+];

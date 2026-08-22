@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+
 import { motion } from "framer-motion";
+
 import { HiArrowUpRight, HiChevronLeft, HiChevronRight } from "react-icons/hi2";
 
 import SectionHeading from "../../components/SectionHeading";
 import Booking from "../../components/Booking";
+
 import { decorationServices } from "../../data/services";
 
 const easeLux = [0.16, 1, 0.3, 1];
@@ -36,19 +39,28 @@ export default function Decoration() {
     });
   }, [currentPage]);
 
-  // Page-level SEO tags
+  // =====================================================
+  // PAGE SEO
+  // =====================================================
+
   useEffect(() => {
     const prevTitle = document.title;
+
     document.title =
       "Decoration Services | Wedding & Event Decoration Lahore — Zahid Decor and Flowers";
 
     let meta = document.querySelector('meta[name="description"]');
+
     const prevContent = meta?.getAttribute("content") ?? null;
+
     if (!meta) {
       meta = document.createElement("meta");
+
       meta.setAttribute("name", "description");
+
       document.head.appendChild(meta);
     }
+
     meta.setAttribute(
       "content",
       "Wedding, Nikah, Mehndi and event decoration from Lahore's Best Flower Shop. Elegant floral styling with Fresh Flowers Lahore and reliable Flower Delivery Lahore-wide.",
@@ -56,13 +68,49 @@ export default function Decoration() {
 
     return () => {
       document.title = prevTitle;
-      if (meta && prevContent !== null) meta.setAttribute("content", prevContent);
+
+      if (meta && prevContent !== null) {
+        meta.setAttribute("content", prevContent);
+      }
     };
   }, []);
 
+  // =====================================================
+  // OPEN BOOKING
+  // Decoration services are Lahore + nearby areas
+  // =====================================================
+
+  const openBooking = (service) => {
+    setSelectedService({
+      ...service,
+      type: "decoration",
+      locationRequired: true,
+    });
+  };
+
+  // =====================================================
+  // CUSTOM DECORATION
+  // =====================================================
+
+  const openCustomBooking = () => {
+    setSelectedService({
+      id: "custom-decoration",
+      title: "Custom Decoration",
+      description:
+        "A personalised decoration setup designed according to your event, venue, theme and requirements.",
+      image:
+        "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
+      type: "decoration",
+      locationRequired: true,
+    });
+  };
+
   return (
     <>
-      {/* ================= HERO ================= */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
+
       <section className="relative overflow-hidden bg-gradient-to-b from-gold/15 via-ivory to-ivory pt-32 pb-16 sm:pt-25 sm:pb-5">
         <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
 
@@ -72,7 +120,10 @@ export default function Decoration() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: easeLux }}
+            transition={{
+              duration: 0.6,
+              ease: easeLux,
+            }}
             className="eyebrow mb-4"
           >
             Decoration Services — Flower Shop Lahore
@@ -105,14 +156,17 @@ export default function Decoration() {
             className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-charcoal-soft/80 sm:text-lg"
           >
             From weddings and Nikah ceremonies to birthdays, bridal rooms, car
-            decoration and private events, our team — Lahore&rsquo;s Best
-            Flower Shop for styling — transforms every space with Fresh
-            Flowers and elegant, hand-finished details.
+            decoration and private events, our team — Lahore&rsquo;s Best Flower
+            Shop for styling — transforms every space with Fresh Flowers and
+            elegant, hand-finished details.
           </motion.p>
         </div>
       </section>
 
-      {/* ================= DECORATION SERVICES ================= */}
+      {/* =====================================================
+          DECORATION SERVICES
+      ===================================================== */}
+
       <section className="bg-ivory py-16 sm:py-24">
         <div className="container-x">
           <SectionHeading
@@ -122,6 +176,7 @@ export default function Decoration() {
           />
 
           {/* SERVICE CARDS */}
+
           <motion.div
             key={currentPage}
             initial={{ opacity: 0, y: 18 }}
@@ -145,6 +200,7 @@ export default function Decoration() {
                 className="group overflow-hidden rounded-2xl bg-white shadow-card transition-all duration-500 hover:-translate-y-1 hover:shadow-soft"
               >
                 {/* IMAGE */}
+
                 <div className="relative h-64 overflow-hidden sm:h-72">
                   <img
                     src={item.image}
@@ -154,20 +210,24 @@ export default function Decoration() {
                   />
 
                   {/* IMAGE OVERLAY */}
+
                   <div className="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-charcoal/10 to-transparent" />
 
                   {/* SERVICE NUMBER */}
+
                   <div className="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-xs font-medium text-burgundy shadow-soft backdrop-blur-sm">
                     {String(startIndex + i + 1).padStart(2, "0")}
                   </div>
 
                   {/* CATEGORY */}
+
                   <span className="absolute bottom-4 left-5 rounded-full border border-white/30 bg-charcoal/30 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-white backdrop-blur-md">
                     Decoration
                   </span>
                 </div>
 
                 {/* CARD CONTENT */}
+
                 <div className="p-5 sm:p-6">
                   <h3 className="font-display text-xl text-charcoal sm:text-2xl">
                     {item.title}
@@ -178,9 +238,10 @@ export default function Decoration() {
                   </p>
 
                   {/* ORDER BUTTON */}
+
                   <button
                     type="button"
-                    onClick={() => setSelectedService(item)}
+                    onClick={() => openBooking(item)}
                     className="group/button mt-5 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-burgundy px-5 py-3 text-sm font-medium text-cream transition-all duration-300 hover:-translate-y-0.5 hover:bg-burgundy/90 hover:shadow-soft active:translate-y-0"
                   >
                     Order Now
@@ -194,10 +255,14 @@ export default function Decoration() {
             ))}
           </motion.div>
 
-          {/* ================= PAGINATION ================= */}
+          {/* =====================================================
+              PAGINATION
+          ===================================================== */}
+
           {totalPages > 1 && (
             <div className="mt-12 flex flex-col items-center gap-5 sm:mt-16">
               {/* PAGE INFO */}
+
               <p className="text-sm text-charcoal-soft/70">
                 Page{" "}
                 <span className="font-semibold text-burgundy">
@@ -210,8 +275,10 @@ export default function Decoration() {
               </p>
 
               {/* PAGINATION BUTTONS */}
+
               <div className="flex items-center justify-center gap-2">
                 {/* PREVIOUS */}
+
                 <button
                   type="button"
                   onClick={() => goToPage(currentPage - 1)}
@@ -227,9 +294,12 @@ export default function Decoration() {
                 </button>
 
                 {/* PAGE NUMBERS */}
+
                 <div className="flex items-center gap-2">
                   {Array.from(
-                    { length: totalPages },
+                    {
+                      length: totalPages,
+                    },
                     (_, index) => index + 1,
                   ).map((page) => (
                     <motion.button
@@ -251,6 +321,7 @@ export default function Decoration() {
                 </div>
 
                 {/* NEXT */}
+
                 <button
                   type="button"
                   onClick={() => goToPage(currentPage + 1)}
@@ -270,7 +341,10 @@ export default function Decoration() {
         </div>
       </section>
 
-      {/* ================= CUSTOM DECORATION CTA ================= */}
+      {/* =====================================================
+          CUSTOM DECORATION CTA
+      ===================================================== */}
+
       <section className="relative overflow-hidden bg-cream/50 py-16 sm:py-20">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
 
@@ -284,16 +358,7 @@ export default function Decoration() {
           <div className="mt-8">
             <button
               type="button"
-              onClick={() =>
-                setSelectedService({
-                  id: "custom-decoration",
-                  title: "Custom Decoration",
-                  description:
-                    "A personalised decoration setup designed according to your event, venue, theme and requirements.",
-                  image:
-                    "https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80",
-                })
-              }
+              onClick={openCustomBooking}
               className="btn-primary"
             >
               Order Custom Decoration
@@ -303,7 +368,10 @@ export default function Decoration() {
         </div>
       </section>
 
-      {/* ================= BOOKING MODAL ================= */}
+      {/* =====================================================
+          BOOKING MODAL
+      ===================================================== */}
+
       <Booking
         service={selectedService}
         onClose={() => setSelectedService(null)}
